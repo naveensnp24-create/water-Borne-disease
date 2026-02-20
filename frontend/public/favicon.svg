@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0369a1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waterMolecule" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dangerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="shieldGradient">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGradient)"/>
+  
+  <!-- Shield/Protection shape (hexagon) -->
+  <path d="M 50 12 L 70 25 L 70 50 L 50 63 L 30 50 L 30 25 Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#22d3ee" 
+        stroke-width="2.5"
+        opacity="0.4"/>
+  
+  <!-- Water molecule structure (H2O) -->
+  <!-- Oxygen atom (center) -->
+  <circle cx="50" cy="40" r="8" fill="url(#waterMolecule)" stroke="#ffffff" stroke-width="2" filter="url(#glow)"/>
+  
+  <!-- Hydrogen atoms (left and right) -->
+  <circle cx="35" cy="50" r="5" fill="url(#waterMolecule)" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="65" cy="50" r="5" fill="url(#waterMolecule)" stroke="#ffffff" stroke-width="1.5"/>
+  
+  <!-- Bonds between atoms -->
+  <line x1="43" y1="44" x2="38" y2="48" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+  <line x1="57" y1="44" x2="62" y2="48" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+  
+  <!-- AI/Data wave pattern (bottom) -->
+  <path d="M 20 70 Q 30 65 35 70 T 45 70" 
+        stroke="#22d3ee" 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round"
+        opacity="0.8"/>
+  <path d="M 55 70 Q 65 65 70 70 T 80 70" 
+        stroke="#22d3ee" 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round"
+        opacity="0.8"/>
+  
+  <!-- Monitoring dots (ward indicators) -->
+  <circle cx="20" cy="30" r="2.5" fill="#22d3ee">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="80" cy="30" r="2.5" fill="#f59e0b">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="20" cy="60" r="2.5" fill="#ef4444">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="80" cy="60" r="2.5" fill="#22d3ee">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Alert/Warning indicator (top right) -->
+  <g transform="translate(72, 18)">
+    <circle r="8" fill="url(#dangerGradient)">
+      <animate attributeName="r" values="8;10;8" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M 0 -4 L 0 1 M 0 3 L 0 4" 
+          stroke="white" 
+          stroke-width="1.5" 
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Microscope/Analysis symbol (bottom center) -->
+  <g transform="translate(50, 80)">
+    <circle r="4" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
+    <line x1="0" y1="-4" x2="0" y2="-8" stroke="#22d3ee" stroke-width="1.5"/>
+    <circle cx="0" cy="-8" r="1.5" fill="#22d3ee"/>
+  </g>
+  
+  <!-- Subtle grid pattern (representing data/analytics) -->
+  <g opacity="0.15">
+    <line x1="25" y1="25" x2="75" y2="25" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="25" y1="40" x2="75" y2="40" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="25" y1="55" x2="75" y2="55" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="35" y1="20" x2="35" y2="60" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="50" y1="20" x2="50" y2="60" stroke="#ffffff" stroke-width="0.5"/>
+    <line x1="65" y1="20" x2="65" y2="60" stroke="#ffffff" stroke-width="0.5"/>
+  </g>
+</svg>

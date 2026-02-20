@@ -1,0 +1,20 @@
+{
+  "name": "Waterborne Disease Prediction - Coimbatore",
+  "short_name": "Water Alert",
+  "description": "AI-powered waterborne disease outbreak prediction system",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0ea5e9",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "medical", "utilities"],
+  "screenshots": []
+}

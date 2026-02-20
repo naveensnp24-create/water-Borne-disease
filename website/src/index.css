@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Amazon Ember', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #232f3e;
+  color: #16191f;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* AWS-style scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eaeded;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #879196;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #687078;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(213, 219, 219, 0.5);
+}
+
+/* AWS gradient */
+.aws-gradient {
+  background: linear-gradient(135deg, #ff9900 0%, #ec7211 100%);
+}
+
+/* Code block styling */
+pre {
+  background: #16191f;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}

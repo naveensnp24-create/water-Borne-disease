@@ -1,0 +1,547 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: #0a1929;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated water background with flowing effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0a1929 0%, #0c2340 50%, #0a1929 100%);
+  pointer-events: none;
+  z-index: 0;
+  background-size: 200% 200%;
+  animation: waterFlow 20s ease-in-out infinite;
+}
+
+@keyframes waterFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Professional scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Shimmer effect for gradient text */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Glow pulse animation */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4), 0 0 40px rgba(34, 211, 238, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.6), 0 0 60px rgba(34, 211, 238, 0.3);
+  }
+}
+
+/* Status pulse for indicators */
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Floating animation for icons */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Progress bar fill animation */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+}
+
+/* Card entrance animation */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.scroll-animate {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.scroll-animate-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.scroll-fade {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.scroll-slide-left {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.scroll-slide-right {
+  animation: slideInRight 0.7s ease-out forwards;
+}
+
+/* Glass effects with subtle animation */
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+  animation: cardEntrance 0.5s ease-out;
+}
+
+/* Professional card hover with 3D effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+/* Animated gradient text with shimmer */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #22d3ee 0%,
+    #06b6d4 25%,
+    #0ea5e9 50%,
+    #06b6d4 75%,
+    #22d3ee 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Map glow effect */
+.map-glow {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Status indicators with pulse */
+.status-pulse {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* Floating icons */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Leaflet map styling */
+.leaflet-container {
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.leaflet-container:hover {
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.4);
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+  padding: 4px !important;
+  min-width: 250px !important;
+  border: 2px solid rgba(34, 211, 238, 0.5) !important;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: #1a1a1a !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.leaflet-marker-icon {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: all 0.3s ease;
+}
+
+.leaflet-marker-icon:hover {
+  filter: drop-shadow(0 6px 12px rgba(34, 211, 238, 0.6));
+  transform: scale(1.1);
+}
+
+/* Ward cards with shimmer on hover */
+.ward-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  border-radius: 8px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ward-card:hover {
+  transform: scale(1.05) translateZ(0);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(34, 211, 238, 0.4) !important;
+}
+
+.ward-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.ward-card:hover::after {
+  animation: shimmer 1.5s ease-in-out;
+  opacity: 1;
+}
+
+/* Leaflet controls */
+.leaflet-control-zoom a {
+  background-color: rgba(10, 25, 41, 0.9) !important;
+  color: #22d3ee !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(34, 211, 238, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: rgba(34, 211, 238, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.4) !important;
+}
+
+/* Custom scrollbar with glow */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  border: 1px solid rgba(34, 211, 238, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee 0%, #06b6d4 100%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #06b6d4 0%, #0284c7 100%);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
+}
+
+/* Button styles with ripple effect */
+button {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 20px rgba(34, 211, 238, 0.5),
+    0 0 40px rgba(34, 211, 238, 0.3),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Input focus with glow */
+input:focus {
+  box-shadow: 
+    0 0 0 3px rgba(34, 211, 238, 0.3),
+    0 0 20px rgba(34, 211, 238, 0.2);
+  border-color: #22d3ee;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Progress bar animation */
+.progress-bar {
+  animation: progressFill 1s ease-out forwards;
+}
+
+/* Data bar */
+.data-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Loading shimmer */
+.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Map container */
+.map-container .glass {
+  animation: cardEntrance 0.5s ease-out;
+}
+
+.ward-grid {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hexagon with hover effect */
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hexagon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
+}
+
+/* Alert badge pulse */
+.alert-badge {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* Stat counter animation */
+.stat-counter {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Chart animation */
+.chart-animate {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Info card entrance */
+.info-card {
+  animation: cardEntrance 0.6s ease-out;
+}
+
+/* Navigation link hover */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #06b6d4);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Disease icon animation */
+.disease-icon {
+  transition: all 0.3s ease;
+}
+
+.disease-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Risk badge glow */
+.risk-badge-high {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.risk-badge-medium {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+}
+
+.risk-badge-low {
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+}
+
+/* Tooltip animation */
+.tooltip {
+  animation: fadeInUp 0.2s ease-out;
+}
+
+/* Responsive animations - reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
